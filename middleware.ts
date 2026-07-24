@@ -1,19 +1,6 @@
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
+import { clerkMiddleware } from '@clerk/nextjs/server'
 
-// 1. Define only the routes/pages that require a logged-in user
-const isProtectedRoute = createRouteMatcher([
-  '/dashboard(.*)',
-  '/account(.*)',
-  '/admin(.*)',
-])
-
-export default clerkMiddleware(async (auth, req) => {
-  // 2. Only enforce authentication on protected routes.
-  // Unmatched routes (like /api/inngest) will remain publicly accessible.
-  if (isProtectedRoute(req)) {
-    await auth.protect()
-  }
-})
+export default clerkMiddleware()
 
 export const config = {
   matcher: [
