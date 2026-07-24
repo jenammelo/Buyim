@@ -1,5 +1,5 @@
 import { serve } from "inngest/next";
-import { inngest } from "@/inngest/client"; // Use @/ instead of ../../../
+import { inngest } from "@/inngest/client";
 import { 
   syncUserCreation, 
   syncUserUpdate, 
@@ -11,6 +11,6 @@ export const { GET, POST, PUT } = serve({
   functions: [
     syncUserCreation,
     syncUserUpdate,
-    syncUserDeletion
+    syncUserDeletion,
   ],
 });

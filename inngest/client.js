@@ -1,4 +1,4 @@
-// src/inngest/client.ts
 import { Inngest } from "inngest";
 
+// Initialize the Inngest client
 export const inngest = new Inngest({ id: "buyim" });
