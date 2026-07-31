@@ -14,7 +14,7 @@ model User {
     id    String @id
     name  String
     email String
-    image String
+    image String?
     cart  Json   @default("{}")
 
     // Relations
