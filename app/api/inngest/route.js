@@ -1,12 +1,11 @@
+// app/api/inngest/route.js
 import { serve } from "inngest/next";
 import { inngest } from "@/inngest/client";
-import { syncUserCreation } from "@/inngest/functions";
+import { syncUserCreation } from "@/inngest/functions"; // 👈 ONLY import what exists
 
-// Next.js App Router expects GET, POST, and PUT exported directly
 export const { GET, POST, PUT } = serve({
   client: inngest,
   functions: [
-    syncUserCreation,
+    syncUserCreation, // 👈 Clean out the undefined variables here
   ],
 });
-  
